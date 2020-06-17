@@ -16,14 +16,17 @@ else
 	SONAR_PASSWORD="${INPUT_PASSWORD}"
 fi
 
-pwd
+echo "${PWD}"
 ls
 
-if [[-z "${INPUT_LINTCOMMADN}"]]; then
+echo "${INPUT_LINTCOMMAND}"
+echo "${INPUT_TESTCOMMAND}"
+
+if [[-z "${INPUT_LINTCOMMAND}"]]; then
     ${INPUT_LINTCOMMAND}
 fi
 
-if [[-z "${INPUT_TESTCOMMADN}"]]; then
+if [[-z "${INPUT_TESTCOMMAND}"]]; then
     ${INPUT_TESTCOMMAND}
 fi
 

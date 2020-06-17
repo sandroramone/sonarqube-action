@@ -16,11 +16,8 @@ else
 	SONAR_PASSWORD="${INPUT_PASSWORD}"
 fi
 
-echo "${PWD}"
-ls
-
-echo "${INPUT_LINTCOMMAND}"
-echo "${INPUT_TESTCOMMAND}"
+echo "lintcommand: ${INPUT_LINTCOMMAND}"
+echo "testcommand: ${INPUT_TESTCOMMAND}"
 
 if [[-z "${INPUT_LINTCOMMAND}"]]; then
     ${INPUT_LINTCOMMAND}

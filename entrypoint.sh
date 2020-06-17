@@ -16,6 +16,17 @@ else
 	SONAR_PASSWORD="${INPUT_PASSWORD}"
 fi
 
+pwd
+ls
+
+if [[-z "${INPUT_LINTCOMMADN}"]]; then
+    ${INPUT_LINTCOMMAND}
+fi
+
+if [[-z "${INPUT_TESTCOMMADN}"]]; then
+    ${INPUT_TESTCOMMAND}
+fi
+
 sonar-scanner \
 	-Dsonar.host.url=${INPUT_HOST} \
 	-Dsonar.projectKey=${PWD##*/} \
